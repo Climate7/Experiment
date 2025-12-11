@@ -1,0 +1,10 @@
+--- Information for: texture_features.npy ---
+File Path: D:\Goat\Courses\JuniorYear_FirstSemester\Machine_Vision\Experiment\output\5F\texture_features.npy
+Type: <class 'numpy.ndarray'>
+Shape: ()
+Data Type: object
+Size: 1
+Number of Dimensions: 0
+
+--- Data Content (Preview) ---
+{'对比度(Contrast)': 8.829068829479468, '同质性(Homogeneity)': 0.8370120831242377, '能量(Energy)': 0.01624571, '相关性(Correlation)': 0.9922914506416499}

@@ -1,0 +1,32 @@
+实验报告：校园共享单车目标检测
+========================================
+学生环境名称：lk
+实验任务：从校园道路、停车区图像中检测共享单车
+
+一、环境配置过程
+------------------------------
+1. 创建虚拟环境：conda create -n lk python=3.8
+2. 激活环境：conda activate lk
+3. 安装依赖库：
+   - PyTorch & Torchvision: 用于加载预训练深度学习模型 (Faster R-CNN)
+   - OpenCV (opencv-python): 用于图像读取与结果绘制
+   - NumPy: 用于矩阵运算
+
+二、算法分析
+------------------------------
+1. 核心算法：Faster R-CNN (Region-based Convolutional Neural Networks)
+   - 特征提取 (Backbone)：使用 ResNet50 + FPN (特征金字塔) 提取多尺度图像特征。
+   - 目标定位 (RPN)：区域生成网络 (Region Proposal Network) 生成可能包含物体的候选框。
+   - 分类与回归 (Head)：对候选框进行具体类别分类 (Softmax) 和坐标微调 (BBox Regression)。
+2. 训练集：Microsoft COCO Dataset (包含 'bicycle' 类别)。
+3. 检测逻辑：
+   - 加载预训练模型权重。
+   - 对输入图像进行 Tensor 转换与归一化。
+   - 筛选置信度 (Confidence Score) > 0.5 且 类别为 'bicycle' 的检测框。
+
+三、模型检测结果统计
+------------------------------
+图片: bicycle1.jpg         | 检测到单车数量: 3
+图片: bicycle2.jpg         | 检测到单车数量: 1
+图片: bicycle3.jpg         | 检测到单车数量: 2
+图片: bicycle4.jpg         | 检测到单车数量: 1
